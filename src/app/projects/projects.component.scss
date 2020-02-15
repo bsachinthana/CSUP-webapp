@@ -1,0 +1,35 @@
+.projects-main{
+    padding:4rem 3rem;
+    .display-1{
+        line-height: 5rem;
+    }
+    .d1{ color:#216583;}
+    .d2{ color:#00909e;}
+}
+
+.card .card-body{
+  position: absolute;
+  text-align: center;
+  h5{
+    
+      padding:0.5rem 1rem;
+      background-color: rgba(201, 209, 211,0.9);
+      color:#1b2a49;
+  }
+}
+
+@media (max-width: 767.98px) {
+    h1.display-1{
+        display: inline-block !important;
+        font-size: 3rem;
+    }
+    .d2{
+        margin-left:1rem;
+    }
+    .card-title{
+        font-size: 1rem;
+    }
+    .card{
+        margin-top:1rem;
+    }
+}

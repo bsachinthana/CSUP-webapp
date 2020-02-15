@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col d-flex align-items-middle justify-content-center">
+        <h2 class="display-2">Our Team</h2>
+    </div>
+</div>
+<div class="row d-flex align-items-stretch justify-content-center pr-2 pl-2">
+    <div class="col-3 card-col d-flex justify-content-center" *ngFor="let b of board" data-aos-delay="250" data-aos="fade-up" data-aos-easing="ease-in-out-quad" data-aos-duration="800">
+        <div class="card">
+            <div class="card-img-top" data-aos-delay="250" data-aos="flip-left" data-aos-easing="ease-in-out-quad" data-aos-duration="1300">
+                <img [src]="baseUrl + b.fileName" class="card-img-top-inner" alt="{{b.name}}">
+            </div>
+            <div class="card-body">
+                <span class="card-title">{{b.post}}</span>
+                <p class="card-text">{{b.name}}</p>
+            </div>
+        </div>
+    </div>
+</div>

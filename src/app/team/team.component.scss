@@ -1,0 +1,46 @@
+div.card-img-top{
+    padding:2rem 2rem;
+   img{
+    border-radius: 50% 50%;
+      width: 100%;
+      height:auto; 
+      padding:5px;
+   }
+}
+
+.card{
+    border:none;
+    background-color: transparent;
+}
+.card-body{
+    font-family: 'Sulphur Point', sans-serif;
+    text-align: center;
+    color:#00909e;
+    margin-top:-2rem;
+    .card-text{
+        font-size: 1.6rem;
+        font-weight: 200;
+        line-height:1.2rem;
+        margin-top:0.8rem;
+        color:#c9d1d3;
+    }
+    .card-title{
+        font-weight: 200;
+        font-size: 1.2rem;
+        line-height:1rem;
+        
+    }
+}
+
+.card-col{
+    margin-top:2rem;
+}
+
+.display-2{
+    margin-top:3rem;
+    color:#f7be16;
+}
+
+.row{
+    background-color: #1b2a49;
+}

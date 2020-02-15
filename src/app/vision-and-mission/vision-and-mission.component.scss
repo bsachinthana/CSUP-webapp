@@ -1,0 +1,25 @@
+.vision-bg{
+    background-image: url("../../assets/faculty.png");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    min-height:500px;
+}
+.col{
+    min-height:500px;
+}
+.row{
+    background-color: #000;
+    background-image: url("../../assets/comp-bg.png");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.display-1{
+        line-height: 5rem;
+        color:#f7be16;
+        padding-left:2rem;
+}
+
+.lead{
+    color:#fff;
+}

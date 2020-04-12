@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-team',
@@ -6,29 +8,49 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./team.component.scss']
 })
 export class TeamComponent implements OnInit {
-  baseUrl = '../../assets/team/';
-  board = [
-    { fileName: 'erunika.jpg', post: 'Senior Treasurer', name: 'Dr. Erunika Dayarathne' },
-    { fileName: 'buddhima.jpg', post: 'President', name: 'Buddhima Amarathunga' },
-    { fileName: 'kiwihari.jpg', post: 'Secretary', name: 'Ishara Kiwihari' },
-    { fileName: 'shaveen.jpg', post: 'Vice President', name: 'Shaveen Britto' },
-    { fileName: 'nilupul.jpg', post: 'Assistant Secretary', name: 'Nilupul Kodikara' },
-    { fileName: 'niluka.jpg', post: 'Web Master', name: 'Niluka Dilhan' },
-    { fileName: 'vishmi.jpg', post: 'User Group Admin (AI)', name: 'Vishmi Vithanachchi' },
-    { fileName: 'charith.jpg', post: 'User Group Admin (Mobile Development)', name: 'Charith Abeygunawardhena' },
-    { fileName: 'malith.jpg', post: 'Junior Treasurer', name: 'Malith Kalhara' },
-    { fileName: 'viraj.jpg', post: 'User Group Admin (Programming)', name: 'Viraj Edirisinghe' },
-    { fileName: 'parakrama.jpg', post: 'User Group Admin (Database and Networking)', name: 'Parakrama Dissanayake' },
-    { fileName: 'kavinda.jpg', post: 'User Group Admin (Media)', name: 'Kavinda Nimalaka' },
-    { fileName: 'hasitha.jpg', post: 'Graphic Designer', name: 'Hasitha Ranaweera' },
-    { fileName: 'kusal.jpg', post: 'Batch Coordinator', name: 'Kusal Sirimanna' },
-    { fileName: 'rupika.jpg', post: 'Batch Coordinator', name: 'Rupika Ekanayake' },
-    { fileName: 'hara.jpg', post: 'Batch Coordinator', name: 'Pramuka Weerasinghe' },
- ];
 
-  constructor() { }
+  items: any[];
+  baseUrl = '../../assets/team2019/';
 
-  ngOnInit() {
+  yearForm: FormGroup;
+  selectedBoard;
+  allYears: string[];
+
+  constructor(private fb: FormBuilder, private ds: DataService) {
+    this.yearForm = this.fb.group({
+      'selectedYear': ['2020']
+    });
+    this.selectedBoard = this.ds.getBoard('2020');
+
+    this.yearForm.get('selectedYear').valueChanges.subscribe(value => {
+      switch (value) {
+        case '2020' : this.selectedBoard =  this.getBoard('2020'); break;
+        case '2019' : this.selectedBoard =  this.getBoard('2019'); break;
+        case '2018' : this.selectedBoard =  this.getBoard('2018'); break;
+        case '2017' : this.selectedBoard =  this.getBoard('2017'); break;
+        case 'all' : this.allYears =  this.ds.getAllYears();
+      }
+    });
+
   }
 
+  ngOnInit() {
+
+  }
+
+  getBoard(year: string) {
+    return this.ds.getBoard(year);
+  }
+
+  getAllYears() {
+    return this.ds.getAllYears();
+  }
+
+  print(e) {
+    console.log(e);
+  }
+
+  setBoardYear(year: string) {
+    this.selectedBoard  = this.getBoard(year);
+  }
 }

@@ -9,16 +9,16 @@ import { DataService } from '../services/data.service';
 })
 export class TeamComponent implements OnInit {
 
-  items: any[];
   baseUrl = '../../assets/team2019/';
 
   yearForm: FormGroup;
   selectedBoard;
   allYears: string[];
+  latestBoard;
 
   constructor(private fb: FormBuilder, private ds: DataService) {
     this.yearForm = this.fb.group({
-      'selectedYear': ['2020']
+      'selectedYear': ['2020'],
     });
     this.selectedBoard = this.ds.getBoard('2020');
 
@@ -46,11 +46,12 @@ export class TeamComponent implements OnInit {
     return this.ds.getAllYears();
   }
 
-  print(e) {
-    console.log(e);
+  getFirstTwoYears(){
+    return this.ds.getFirstTwoYears();
   }
 
   setBoardYear(year: string) {
     this.selectedBoard  = this.getBoard(year);
   }
+
 }

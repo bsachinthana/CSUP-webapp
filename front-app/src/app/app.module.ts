@@ -12,7 +12,6 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { TeamComponent } from './team/team.component';
 import { LearningToolsComponent } from './learning-tools/learning-tools.component';
 import { HomeComponent } from './home/home.component';
-import { TimelineComponent } from './timeline/timeline.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -25,7 +24,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TeamComponent,
     LearningToolsComponent,
     HomeComponent,
-    TimelineComponent,
   ],
   imports: [
     BrowserModule,

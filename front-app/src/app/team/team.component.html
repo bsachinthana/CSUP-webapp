@@ -15,12 +15,7 @@
 
     <div class="col" style="padding-left: 0;">
         <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" formControlName="selectedYear">
-            <label ngbButtonLabel class="btn-primary">
-                <input ngbButton type="radio" value="2019"> 2019
-            </label>
-            <label ngbButtonLabel class="btn-primary">
-                <input ngbButton type="radio" value="2020"> 2020
-            </label>
+             <button type="button" class="btn btn-primary" *ngFor="let year of getFirstTwoYears()" (click)="setBoardYear(year)"> {{year}} </button>
         </div>
     </div>
 </div>

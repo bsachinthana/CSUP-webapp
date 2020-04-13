@@ -4,7 +4,7 @@
     </div>
 </div>
 
-<div class="row d-flex justify-content-center" [formGroup]="yearForm">
+<div class="row d-flex justify-content-center">
 
     <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown" style="padding-right: 0;">
         <button class="btn btn-outline-primary mr-2" id="dropdownManual" ngbDropdownToggle> All </button>
@@ -14,14 +14,13 @@
       </div>
 
     <div class="col" style="padding-left: 0;">
-        <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" formControlName="selectedYear">
+        <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic">
              <button type="button" class="btn btn-primary" *ngFor="let year of getFirstTwoYears()" (click)="setBoardYear(year)"> {{year}} </button>
         </div>
     </div>
 </div>
 
-<div class="row d-flex align-items-stretch justify-content-center pr-2 pl-2"
-    *ngIf="yearForm.get('selectedYear').value != 'all'">
+<div class="row d-flex align-items-stretch justify-content-center pr-2 pl-2">
     <div class="col-6 col-sm-6 col-md-4 col-lg-3 card-col d-flex justify-content-center" *ngFor="let b of selectedBoard"
         data-aos-delay="250" data-aos="fade-up" data-aos-easing="ease-in-out-quad" data-aos-duration="800">
         <div class="card">

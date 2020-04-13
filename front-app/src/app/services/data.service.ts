@@ -51,8 +51,4 @@ export class DataService {
   getFirstTwoYears(): string[] {
     return Array.from(this.boardMembers.keys()).slice(0, 2).reverse();
   }
-
-  getFirstYear(): string[] {
-    return Array.from(this.boardMembers.keys()).slice(0, 1);
-  }
 }

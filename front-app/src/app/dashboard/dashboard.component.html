@@ -1,1 +1,24 @@
-<p>dashboard works!</p>
+
+        <nav class="navbar navbar-dark bg-primary">        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </nav>
+
+
+
+
+<div class="row dashboard-main">
+    <div class="col-3">
+            <div class="list-group">
+                    <a routerLink="./sign-in" class="list-group-item list-group-item-action">
+                      Sign In
+                    </a>
+                    <a routerLink="./log-in" class="list-group-item list-group-item-action"> Membership Application</a>
+                    <a href="#" class="list-group-item list-group-item-action">View Members</a>
+                  </div>
+    </div>
+    <div class="col">
+        <router-outlet></router-outlet>
+    </div>
+</div>

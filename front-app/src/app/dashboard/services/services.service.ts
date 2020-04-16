@@ -12,6 +12,6 @@ export class ServicesService {
    }
 
    getFaculties() {
-    return Array.from(this.faculty.sort().values());
+    return Array.from(this.faculty.values());
    }
 }

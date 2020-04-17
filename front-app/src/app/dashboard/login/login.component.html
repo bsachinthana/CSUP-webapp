@@ -5,31 +5,31 @@
         <h5 class="card-title"> Membership Application </h5>
       </div>
       <div class="card-body">
-        <form [formGroup]="loginGroup">
+        <form>
           <div class="form-group">
             <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Name" formControlName="name">
+                <input type="text" class="form-control" id="name" placeholder="Name">
           </div>
 
           <div class="form-group">
             <label for="name">Faculty</label>
             <select class="custom-select" required>
-              <option *ngFor="let faculty of getFaculties()" formControlName="faculty"> {{faculty}} </option>
+              <option *ngFor="let faculty of getFaculties()"> {{faculty}} </option>
             </select>
           </div>
 
           <div class="form-group">
             <label for="regno">Registration Number</label>
-            <input type="text" class="form-control" id="regno" placeholder="Registration Number" formControlName="regNo">
+            <input type="text" class="form-control" id="regno" placeholder="Registration Number">
           </div>
 
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email">
+            <input type="email" class="form-control" id="email" placeholder="Email">
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+            <input type="password" class="form-control" id="password" placeholder="Password">
           </div>
         </form>
       </div>

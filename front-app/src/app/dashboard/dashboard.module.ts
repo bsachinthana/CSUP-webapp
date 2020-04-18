@@ -7,6 +7,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { ViewMembersComponent } from './view-members/view-members.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MembershipApplicationComponent } from './membership-application/membership-application.component';
+import { DashboardDataService } from './services/dashboard-data.service';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +17,11 @@ import { MembershipApplicationComponent } from './membership-application/members
     CommonModule,
     HttpClientModule,
     DashboardRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [
+    DashboardDataService,
+  ],
 })
 export class DashboardModule { }

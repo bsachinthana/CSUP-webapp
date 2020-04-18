@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../service/data.service';
+import { DashboardDataService } from '../services/dashboard-data.service';
 
 @Component({
   selector: 'app-view-members',
@@ -8,7 +8,7 @@ import { DataService } from '../service/data.service';
 })
 export class ViewMembersComponent implements OnInit {
 
-  constructor(private ds: DataService) { }
+  constructor(private ds: DashboardDataService) { }
 
   ngOnInit() {
   }
@@ -16,5 +16,9 @@ export class ViewMembersComponent implements OnInit {
   getMembers() {
     return this.ds.getMembers();
   }
+
+  // getAllMembers() {
+  //   return this.ds.getAllMembers();
+  // }
 
 }

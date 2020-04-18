@@ -10,7 +10,7 @@ export class SignInComponent implements OnInit {
 
   signInForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder) {
     this.signInForm = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required]

@@ -4,11 +4,11 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class DashboardDataService {
 
   faculty: any[] = [];
   members: any[] = [];
-  private prefix = 'http//localhost:3000/';
+  private prefix = 'http://localhost:3000/';
 
   constructor(public http: HttpClient) {
     this.faculty.push('Faculty of Science', 'Faculty of Engineering', 'Faculty of Medicine', 'Faculty of Allied Health Science',
@@ -25,7 +25,12 @@ export class DataService {
     return Array.from(this.members.values());
   }
 
-  addMember(member){
-    return this.http.post(this.prefix + 'api/add', member);
+  addMember(member: any) {
+    return this.http.post(this.prefix + 'api/members/add', member);
   }
+
+  getAllMembers() {
+    return this.http.get(this.prefix + 'api/members');
+  }
+
 }

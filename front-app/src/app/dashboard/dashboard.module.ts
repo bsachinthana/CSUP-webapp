@@ -3,16 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
-import { LoginComponent } from './login/login.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ViewMembersComponent } from './view-members/view-members.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MembershipApplicationComponent } from './membership-application/membership-application.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, LoginComponent, SignInComponent, ViewMembersComponent],
+  declarations: [DashboardComponent, SignInComponent, ViewMembersComponent, MembershipApplicationComponent],
   imports: [
     CommonModule,
-    DashboardRoutingModule
-  ]
+    HttpClientModule,
+    DashboardRoutingModule,
+  ],
+  providers: [],
 })
 export class DashboardModule { }

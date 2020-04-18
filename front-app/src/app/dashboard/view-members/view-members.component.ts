@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicesService } from '../services/services.service';
+import { DataService } from '../service/data.service';
 
 @Component({
   selector: 'app-view-members',
@@ -8,7 +8,7 @@ import { ServicesService } from '../services/services.service';
 })
 export class ViewMembersComponent implements OnInit {
 
-  constructor(private ds: ServicesService) { }
+  constructor(private ds: DataService) { }
 
   ngOnInit() {
   }

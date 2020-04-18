@@ -19,21 +19,6 @@ router.post('/add', function (req, res, next) {
   })
 });
 
-router.put('/:id/designations', function (req, res, next) {
-  Member.findByIdAndUpdate(mongoose.Types.ObjectId(req.params.id), { $set: { designations: req.body.designations } }, (err, doc) => {
-    if (err) { console.log(err); return res.status(400).json({ msg: 'Error Adding Designations' }); }
-    return res.status(200).json({ msg: 'Designation Added Succesfully' });
-  });
-});
-
-router.get('/:id/designations', function (req, res, next) {
-  Member.findById(mongoose.Types.ObjectId(req.params.id), 'designations', (err, doc) => {
-    if (err) { console.log(err); return res.status(400).json({ msg: 'Error fetching Designations' }); }
-    return res.status(200).json({ data: doc });
-  });
-
-});
-
 router.delete('/:id/delete', function(req, res, next){
   Member.findByIdAndRemove(mongoose.Types.ObjectId(req.params.id), (err, doc) =>{
     if (err) { console.log(err); return res.status(400).json({ msg: 'Error deleting Members' }); }
@@ -42,7 +27,7 @@ router.delete('/:id/delete', function(req, res, next){
 });
 
 router.put('/:id/update', function(req, res,next){
-  Member.findByIdAndUpdate(mongoose.Types.ObjectId(req.params.id), (err, doc)=> {
+  Member.findByIdAndUpdate(mongoose.Types.ObjectId(req.params.id),{$set:req.body},(err, doc)=> {
     if (err) { console.log(err); return res.status(400).json({ msg: 'Error updating Members' }); }
     return res.status(200).json({ data:doc });
   });

@@ -33,4 +33,53 @@ router.put('/:id/update', function(req, res,next){
   });
 });
 
+//get all names
+router.get('/allNames', function (req, res, next) {
+  Member.find({}, "name", (err, name) => {
+      if (err) { 
+          return res.status(500).json({ msg: 'Error fetching names' });
+      }
+      return res.status(200).json({data: name});
+  });
+});
+
+// Search name
+router.get('/search', function (req, res, next) {
+  var searchQuery = req.query.q;
+  console.log(searchQuery);
+  if(searchQuery){
+    Member.find({ name: { '$regex': searchQuery, '$options': 'i' } }, "name", (err, name) => {
+      if (err) {
+        return res.status(500).json({ msg: 'Error fetching names' });
+      }
+      return res.status(200).json({ data: name });
+    });
+  } else{
+    return res.status(400).json({ msg: 'No search query' });
+  }
+});
+
+// get member details by its name
+router.get('/:name', function (req, res, next) {
+  Member.findOne({name:req.params.name}, (err, name) => {
+      if (err) {
+          return res.status(500).json({ msg: 'Error fetching name of the member' });
+      }
+      return res.status(200).json({data: name});
+  });
+});
+
+
+
+
 module.exports = router;
+
+// router.route("/find").get(function(req, res) {
+//   detail.find({}, { name: 1 }, function(err, result) {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       res.json(result);
+//     }
+//   });
+// });

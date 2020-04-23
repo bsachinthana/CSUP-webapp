@@ -1,0 +1,55 @@
+<div class="row d-flex justify-content-center align-content-center" Style="min-height:100vh;">
+    <div class="col col-12 col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"> Add Team Members </h5>
+            </div>
+            
+            <div class="card-body">
+                <form [formGroup]="teamDetails">
+
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input type="text" class="form-control" id="year" placeholder="Year" formControlName="year">
+                    </div>
+
+                    <div formArrayName="members">
+                        <div [formGroupName]="i" *ngFor="let pos of teamDetails.get('members').value; let i = index;">
+                            <p>{{pos.member}}</p>
+                            <p>{{pos.position}}</p>
+                        </div>
+                    </div>
+                    
+                </form>
+
+                <form [formGroup]="memberForm">
+                    
+                        <div class="form-group">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Name"
+                                            formControlName="member">
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="position">Position</label>
+                                        <input type="text" class="form-control" id="position" placeholder="Position"
+                                            formControlName="position">
+                                    </div>
+                                </div>
+                            </div>
+
+                           
+
+                        <button class="btn btn-primary" style="width:3rem;" (click)="add()">+</button>
+                        <button class="btn btn-primary" style="width:3rem;" (click)="remove()">-</button>
+                </form>
+            </div>
+
+            <div class="card-body d d-flex justify-content-center">
+                <button type="button" class="btn btn-primary btn-block" (click)="addTeam()"> Add Team</button>
+            </div>
+            
+        </div>
+    </div>
+</div>

@@ -9,10 +9,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { MembershipApplicationComponent } from './membership-application/membership-application.component';
 import { DashboardDataService } from './services/dashboard-data.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AddTeamComponent } from './add-team/add-team.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, SignInComponent, ViewMembersComponent, MembershipApplicationComponent],
+  declarations: [DashboardComponent, SignInComponent, ViewMembersComponent, MembershipApplicationComponent, AddTeamComponent],
   imports: [
     CommonModule,
     HttpClientModule,

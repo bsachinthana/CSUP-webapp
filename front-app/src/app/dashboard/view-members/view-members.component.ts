@@ -8,14 +8,23 @@ import { DashboardDataService } from '../services/dashboard-data.service';
 })
 export class ViewMembersComponent implements OnInit {
 
-  constructor(private ds: DashboardDataService) { }
+  members: any;
+
+  constructor(private ds: DashboardDataService) {
+    this.ds.getAllMembers().subscribe((data: any) => {
+        this.members = data['data'];
+    }, err => {
+      console.log(err);
+    });
+  }
 
   ngOnInit() {
+
   }
 
-  getMembers() {
-    return this.ds.getMembers();
-  }
+  // getMembers() {
+  //   return this.ds.getMembers();
+  // }
 
   // getAllMembers() {
   //   return this.ds.getAllMembers();

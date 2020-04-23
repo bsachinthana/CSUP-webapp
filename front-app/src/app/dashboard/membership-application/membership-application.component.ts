@@ -29,19 +29,11 @@ export class MembershipApplicationComponent implements OnInit {
   }
 
   submit() {
-    // this.submitted = true;
-    // if (this.loginGroup.invalid) {
-    //   return;
-    // }
     this.ds.addMember(this.loginGroup.value).subscribe(member => {
       console.log(member);
     }, err => {
       console.log(err);
     });
   }
-
-  // get f() {
-  //   return this.loginGroup.controls;
-  // }
 
 }

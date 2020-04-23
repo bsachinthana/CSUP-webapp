@@ -33,4 +33,15 @@ export class DashboardDataService {
     return this.http.get(this.prefix + 'api/members');
   }
 
+  addTeam(team: any) {
+    return this.http.post(this.prefix + 'api/teams/add', team);
+  }
+
+  getMemberByName() {
+    return this.http.get(this.prefix + 'api/members/allNames');
+  }
+  
+  search(q){
+    return this.http.get(this.prefix+'api/members/search?q='+q);
+  }
 }

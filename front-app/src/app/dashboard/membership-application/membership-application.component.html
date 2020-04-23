@@ -14,7 +14,7 @@
                     <div class="form-group">
                         <label for="name">Faculty</label>
                         <select class="custom-select" formControlName="faculty" required>
-                            <option *ngFor="let fac of getFaculties()"> {{fac}}
+                            <option *ngFor="let faculty of getFaculties()" > {{faculty}}
                             </option>
                         </select>
                     </div>
@@ -35,11 +35,13 @@
                             formControlName="password">
                     </div> -->
                 </form>
+                
             </div>
 
             <div class="card-body d d-flex justify-content-center">
                 <button type="button" class="btn btn-primary btn-block" (click)="submit()"> Submit </button>
             </div>
+            
         </div>
     </div>
 </div>
